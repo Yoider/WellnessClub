@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  wellness-club:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wellness-club-app
+    restart: unless-stopped
+    ports:
+      # Puerto externo configurable vía variable de entorno o .env (por defecto 4178 para evitar 3000, 3001, 3002)
+      - "${PORT:-4178}:80"
+    environment:
+      - NODE_ENV=production

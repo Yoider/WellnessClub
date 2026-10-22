@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --wellness-olive: #6F7550;
+  --deep-olive: #4F5638;
+  --soft-sage: #A9AD8D;
+  --pale-sage: #E9EBDD;
+  --warm-cream: #F8F6F0;
+  --sand: #D8CDBB;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F8F6F0;
+    color: #4F5638;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Textura orgánica de papel algodón (2% opacidad) para Quiet Luxury */
+.paper-texture {
+  background-image: radial-gradient(rgba(79, 86, 56, 0.045) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Tarjeta Editorial con el borde superior de 4px en Wellness Olive (#6F7550) del Brand Book */
+.signature-card {
+  background-color: #FFFFFF;
+  border-radius: 0.875rem;
+  border-top: 4px solid #6F7550;
+  border-left: 1px solid rgba(169, 173, 141, 0.28);
+  border-right: 1px solid rgba(169, 173, 141, 0.28);
+  border-bottom: 1px solid rgba(169, 173, 141, 0.28);
+  box-shadow: 0 10px 30px -15px rgba(79, 86, 56, 0.07);
+  transition: all 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.signature-card:hover {
+  box-shadow: 0 16px 36px -12px rgba(79, 86, 56, 0.13);
+}
+
+.signature-card-cream {
+  background-color: #F8F6F0;
+  border-radius: 0.875rem;
+  border-top: 4px solid #6F7550;
+  border-left: 1px solid rgba(169, 173, 141, 0.35);
+  border-right: 1px solid rgba(169, 173, 141, 0.35);
+  border-bottom: 1px solid rgba(169, 173, 141, 0.35);
+  transition: all 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Botón principal tipo píldora del Brand Book */
+.btn-wellness {
+  background-color: #6F7550;
+  color: #F8F6F0;
+  border-radius: 9999px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.78rem;
+  transition: all 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-wellness:hover {
+  background-color: #4F5638;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -6px rgba(79, 86, 56, 0.35);
+}
+
+.btn-wellness:active {
+  transform: translateY(0);
+}
+
+/* Micro-animación de respiración suave */
+@keyframes softBreath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+.animate-breath {
+  animation: softBreath 6s ease-in-out infinite;
+}
+
+/* Scrollbar sutil y elegante */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #A9AD8D;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6F7550;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
